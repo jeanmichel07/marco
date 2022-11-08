@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guide d'information{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid" style="padding-bottom: 30px">
+        <div class="container">
+            <h1 style="padding: 20px; font-weight: bold; text-align: center; font-family: 'Arial Black'">
+                LES PRINCIPAUX LIEUX TOURISTIQUES DE MADGASCAR, A VISITER
+            </h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="mt-4 p-5 bg-dark text-white rounded" >
+                        <a href="{{ path('app_monument') }}">LES SITES ET LES MONUMENTS CLASSES</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mt-4 p-5 bg-dark text-white rounded" >
+                        <a href="{{ path('app_principesite') }}">LES PRINCIPAUX SITES A VISITER A MADAGSCAR</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mt-4 p-5 bg-dark text-white rounded" >
+                        <a href="{{ path('app_lieuvisite') }}">LES MEILLEURS LIEUX A VISITER A MADAGASCAR</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mt-4 p-5 bg-dark text-white rounded" >
+                        <a href="{{ path('app_activitefaire') }}">LES MEILLEURS ACTIVITES A FAIRE A MADAGSCAR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

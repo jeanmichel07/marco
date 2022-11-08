@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guide d'information{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="container">
+            <h1 style="padding: 20px; font-weight: bold; text-align: center; font-family: 'Arial Black'">
+                IDENTITE DE MADAGASCAR
+            </h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mt-4 p-5 bg-dark text-white rounded" >
+                        <a href="{{ path('app_fauneflore') }}">FAUNES ET FLORES</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mt-4 p-5 bg-dark text-white rounded" >
+                        <a href="{{ path('app_culture') }}">CULTURES</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mt-4 p-5 bg-dark text-white rounded" >
+                        <a href="{{ path('app_provinces') }}">PROVINCES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div>
+                        <img src="">
+                        <p>587 041 km2</p>
+                        <p>4 800 km de côtes</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <img src="">
+                        <p>25 millions</p>
+                        <p>d'habitants</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <img src="">
+                        <p>Le Malgache et</p>
+                        <p>le Français</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <img src="">
+                        <p>Saision sèche d'avril à octobre</p>
+                        <p>Saision de spluies de novembre à mars</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

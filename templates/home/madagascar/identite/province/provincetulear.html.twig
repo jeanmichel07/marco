@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guide d'information{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid p-6">
+        <div class="container">
+            <h1 style="padding: 20px; font-weight: bold; text-align: center; font-family: 'Arial Black'">
+                IDENTITE DE MADAGASCAR
+            </h1>
+            <p>Les régions de Tuléar:</p>
+            <div class="row" style="padding: 20px">
+                <div class="col-md-6 bg-dark text-white">
+                    <a href="{{ path('app_provincetulearmenabe') }}">MENABE</a>
+                </div>
+                <div class="col-md-6 bg-dark text-white">
+                    <a href="{{ path('app_provincetulearatsimoandre') }}">ATSIMO-ANDREFANA</a>
+                </div>
+            </div>
+            <div class="row" style="padding: 20px">
+                <div class="col-md-6 bg-dark text-white">
+                    <a href="{{ path('app_provincetulearandroy') }}">ANDROY</a>
+                </div>
+                <div class="col-md-6 bg-dark text-white">
+                    <a href="{{ path('app_provincetulearanosy') }}">ANOSY</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

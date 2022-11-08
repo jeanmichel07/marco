@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guide d'information{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid p-6">
+        <div class="container">
+            <h1 style="padding: 20px; font-weight: bold; text-align: center; font-family: 'Arial Black'">
+                IDENTITE DE MADAGASCAR
+            </h1>
+            <p>Les régions de Fianarantsoa:</p>
+            <div class="row" style="padding: 20px">
+                <div class="col-md-6 bg-dark text-white">
+                    <a href="{{ path('app_provincefianarantsoamania') }}">AMORON'I MANIA</a>
+                </div>
+                <div class="col-md-6 bg-dark text-white">
+                    <a href="{{ path('app_provincefianarantsoahaute') }}">HAUTE MATSIATRA</a>
+                </div>
+            </div>
+            <div class="row" style="padding: 20px">
+                <div class="col-md-6 bg-dark text-white">
+                    <a href="{{ path('app_provincefianarantsoavatovavy') }}">VATOVAVY</a>
+                </div>
+                <div class="col-md-6 bg-dark text-white">
+                    <a href="{{ path('app_provincefianarantsoafitovinany') }}">FITOVINANY</a>
+                </div>
+            </div>
+            <div class="row" style="padding: 20px">
+                <div class="col-md-6 bg-dark text-white">
+                    <a href="{{ path('app_provincefianarantsoatsimoatsi') }}">ATSIMO-ATSINANANA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

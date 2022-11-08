@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guide d'information{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid p-6">
+        <div class="container">
+            <h1 style="padding: 20px; font-weight: bold; text-align: center; font-family: 'Arial Black'">
+                IDENTITE DE MADAGASCAR
+            </h1>
+            <p>Les provinces de Madagascar:</p>
+            <div class="row" style="padding: 20px">
+                <div class="col-md-4 bg-dark text-white">
+                    <a href="{{ path('app_provincediego') }}">DIEGO SUAREZ</a>
+                </div>
+                <div class="col-md-4 bg-dark text-white">
+                    <a href="{{ path('app_provincemajunga') }}">MAJUNGA</a>
+                </div>
+                <div class="col-md-4 bg-dark text-white">
+                    <a href="{{ path('app_provincetamatave') }}">TAMATAVE</a>
+                </div>
+            </div>
+            <div class="row" style="padding: 20px">
+                <div class="col-md-4 bg-dark text-white">
+                    <a href="{{ path('app_provincefianarantsoa') }}">FIANARANTSOA</a>
+                </div>
+                <div class="col-md-4 bg-dark text-white">
+                    <a href="{{ path('app_provinceantananarivo') }}">ANTANANARIVO</a>
+                </div>
+                <div class="col-md-4 bg-dark text-white">
+                    <a href="{{ path('app_provincetulear') }}">TULEAR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
