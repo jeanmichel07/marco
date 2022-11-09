@@ -204,7 +204,7 @@ class HomeController extends AbstractController
     /**
      * @return Response
      *
-     * @Route("/app_provincemajungaboeny", name="app_app_provincemajungaboeny")
+     * @Route("/app_provincemajungaboeny", name="app_provincemajungaboeny")
      */
     public function app_provincemajungaboeny()
     {
@@ -268,7 +268,7 @@ class HomeController extends AbstractController
     }
     /**
      * @return Response
-     * @Route("/provincefianarantsoamania", name="provincefianarantsoamania")
+     * @Route("/provincefianarantsoamania", name="app_provincefianarantsoamania")
      */
     public function provincefianarantsoamania()
     {
@@ -300,11 +300,19 @@ class HomeController extends AbstractController
     }
     /**
      * @return Response
-     * @Route("/app_provincefianarantsoatsimoatsi", name="app_app_provincefianarantsoatsimoatsi")
+     * @Route("/provincefianarantsoatsimoatsi", name="app_provincefianarantsoatsimoatsi")
      */
     public function app_provincefianarantsoatsimoatsi()
     {
         return $this->render('home/madagascar/identite/province/regionfianarantsoa/provincefianarantsoatsimoatsi.html.twig');
+    }
+    /**
+     * @return Response
+     * @Route("/provincefianarantsoaihorombe", name="app_provincefianarantsoaihorombe")
+     */
+    public function app_provincefianarantsoaihorombe()
+    {
+        return $this->render('home/madagascar/identite/province/regionfianarantsoa/provincefianarantsoaihorombe.html.twig');
     }
     /**
      * @return Response
@@ -324,7 +332,7 @@ class HomeController extends AbstractController
     }
     /**
      * @return Response
-     * @Route("/provinceantananarivoanalamanga", name="provinceantananarivoanalamanga")
+     * @Route("/provinceantananarivoanalamanga", name="app_provinceantananarivoanalamanga")
      */
     public function provinceantananarivoanalamanga()
     {
