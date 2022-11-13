@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1 style="font-family: Arial; font-weight: bold;text-align: center">Ajouter nouveau Theme Voyage</h1>
+
+    {{ include('theme_voyage/_form.html.twig') }}
+<div style="text-align: center; padding-bottom: 10px">
+    <a class="btn btn-secondary" href="{{ path('app_theme_voyage_index') }}">Retour</a>
+</div>
+{% endblock %}

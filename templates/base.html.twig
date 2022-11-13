@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Agence de voyage{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <link rel="stylesheet" href="{{ asset('asset/bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,12 +16,12 @@
         {% endblock %}
     </head>
     <div class="bg-secondary text-white text-center">
-        <h1 style="text-align: center;font-family: 'Summer Love';padding-top: 20px">Slogan d'une agence de voyage</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit!</p>
+        <h1 style="text-align: center;font-family: 'Summer Love';padding-top: 15px">Slogan d'une agence de voyage</h1>
+        <p style="padding-bottom: 5px">Agence de voyage à Madagascar!</p>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-secondary sticky-top" style="font-family: Cyberfall">
         <div class="container-fluid" >
-            <a class="navbar-brand" href="#">LOGO Agence</a>
+            <a class="navbar-brand" href="{{ path('app_home') }}">LOGO Agence</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,15 +31,15 @@
                         <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">ACCUIEL</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">RESERVATION</a>
+                        <a class="nav-link" href="{{ path('app_reservation') }}">RESERVATION</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle nav-item" href="{{ path('app_voyage') }}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             VOYAGE
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">TYPE VOYAGE</a></li>
-                            <li><a class="dropdown-item" href="#">THEME VOYAGE</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_type_voyage_index') }}">TYPE VOYAGE</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_theme_voyage_index') }}">THEME VOYAGE</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{ path('app_top') }}">TOP VOYAGE</a></li>
                         </ul>
@@ -52,10 +52,10 @@
                             MADAGASCAR
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">SITE TOURISTIQUE</a></li>
-                            <li><a class="dropdown-item" href="#">HOTEL</a></li>
-                            <li><a class="dropdown-item" href="#">ACTIVITE</a></li>
-                            <li><a class="dropdown-item" href="#">VOITURE</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_site_touristique_index') }}">SITE TOURISTIQUE</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_hotel_index') }}">HOTEL</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_activite_index') }}">ACTIVITE</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_loc_voiture_index') }}">VOITURE</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{ path('app_identite') }}">IDENTITE MADA</a></li>
                         </ul>
@@ -65,10 +65,12 @@
                             <i class="fas fa-user">&nbsp;LOGIN</i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">Rôle:</a></li>
-                            <li><a class="dropdown-item" href="#">Nom:</a></li>
+                            {% set userCurrent = app.user.roles[0] == "ROLE_USER" ? "Réceptioniste" : "Admin" %}
+                            <li><a class="dropdown-item" href="#">Rôle: {{ userCurrent }}</a></li>
+                            <li><a class="dropdown-item text-lowercase" href="#">Nom: {{ app.user.email }}</a></li>
+                            <li><a class="dropdown-item text-lowercase" href="{{ path('app_user_index') }}">Utilisateurs</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt">&nbsp;DECONNECTER</i></a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt">&nbsp;DECONNECTER</i></a></li>
                         </ul>
                     </li>
                 </ul>

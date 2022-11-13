@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center; font-weight: bold; font-family: Arial">TYPES VOYAGES</h1>
+
+    <table class="table" style="text-align: center">
+        <thead>
+            <tr class="bg-success">
+                <th>NOM</th>
+                <th>TITRE</th>
+                <th>CARACTERISTIQUES</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_voyage in type_voyages %}
+            <tr>
+                <td>{{ type_voyage.name }}</td>
+                <td>{{ type_voyage.titre }}</td>
+                <td>{{ type_voyage.caracteristique }}</td>
+                <td>
+                    <a  class="btn btn-success text-white p-1" style="text-decoration: none;" href="{{ path('app_type_voyage_show', {'id': type_voyage.id}) }}">Voir</a>
+                    <a class="btn btn-warning text-white p-1" style="text-decoration: none;" href="{{ path('app_type_voyage_edit', {'id': type_voyage.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas de liste</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if app.user %}
+        {% if app.user.roles[0] == "ROLE_ADMIN" %}
+            <div style="text-align: center; padding-bottom: 10px">
+                <a class="btn btn-primary text-white p-1"
+                   style="text-decoration: none;" href="{{ path('app_type_voyage_new') }}">Ajouter</a>
+            </div>
+
+        {% endif %}
+    {% endif %}
+{% endblock %}

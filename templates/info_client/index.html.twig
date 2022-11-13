@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InfoClient index{% endblock %}
+
+{% block body %}
+    <h1>InfoClient index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Genre</th>
+                <th>CIN</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info_client in info_clients %}
+            <tr>
+                <td>{{ info_client.id }}</td>
+                <td>{{ info_client.name }}</td>
+                <td>{{ info_client.prenom }}</td>
+                <td>{{ info_client.adresse }}</td>
+                <td>{{ info_client.email }}</td>
+                <td>{{ info_client.phone }}</td>
+                <td>{{ info_client.genre }}</td>
+                <td>{{ info_client.CIN }}</td>
+                <td>{{ info_client.type }}</td>
+                <td>
+                    <a href="{{ path('app_info_client_show', {'id': info_client.id}) }}">show</a>
+                    <a href="{{ path('app_info_client_edit', {'id': info_client.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_info_client_new') }}">Create new</a>
+{% endblock %}

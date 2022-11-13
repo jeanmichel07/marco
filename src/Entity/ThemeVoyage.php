@@ -25,6 +25,11 @@ class ThemeVoyage
     private $typeVoyage;
 
     /**
+     * @ORM\ManyToOne(targetEntity=District::class, inversedBy="districts")
+     */
+    private $district;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $name;
@@ -67,6 +72,18 @@ class ThemeVoyage
     public function setTypeVoyage(?TypeVoyage $typeVoyage): self
     {
         $this->typeVoyage = $typeVoyage;
+
+        return $this;
+    }
+
+    public function getDistrict(): ?District
+    {
+        return $this->district;
+    }
+
+    public function setDistrict(?District $district): self
+    {
+        $this->district = $district;
 
         return $this;
     }

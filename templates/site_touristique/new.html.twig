@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1>Create new SiteTouristique</h1>
+
+    {{ include('site_touristique/_form.html.twig') }}
+
+    <a href="{{ path('app_site_touristique_index') }}">back to list</a>
+{% endblock %}

@@ -25,6 +25,11 @@ class District
     private $region;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $status;
@@ -49,12 +54,18 @@ class District
      */
     private $siteTouristiques;
 
+    /**
+     * @ORM\OneToMany(targetEntity=ThemeVoyage::class, mappedBy="district")
+     */
+    private $themeVoyage;
+
     public function __construct()
     {
         $this->activites = new ArrayCollection();
         $this->hotels = new ArrayCollection();
         $this->topVoyages = new ArrayCollection();
         $this->siteTouristiques = new ArrayCollection();
+        $this->themeVoyage = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -73,6 +84,24 @@ class District
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+
+
 
     public function isStatus(): ?bool
     {
@@ -195,6 +224,41 @@ class District
     }
 
     public function removeSiteTouristique(SiteTouristique $siteTouristique): self
+    {
+        if ($this->siteTouristiques->removeElement($siteTouristique)) {
+            // set the owning side to null (unless already changed)
+            if ($siteTouristique->getDistrict() === $this) {
+                $siteTouristique->setDistrict(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->name;
+    }
+
+    /**
+     * @return Collection<int, ThemeVoyage>
+     */
+    public function getThemeVoyages(): Collection
+    {
+        return $this->siteTouristiques;
+    }
+
+    public function addThemeVoyage(ThemeVoyage $siteTouristique): self
+    {
+        if (!$this->siteTouristiques->contains($siteTouristique)) {
+            $this->siteTouristiques[] = $siteTouristique;
+            $siteTouristique->setThemeVoyage($this);
+        }
+
+        return $this;
+    }
+
+    public function removeThemeVoyage(ThemeVoyage $siteTouristique): self
     {
         if ($this->siteTouristiques->removeElement($siteTouristique)) {
             // set the owning side to null (unless already changed)

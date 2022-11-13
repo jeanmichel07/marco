@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center; font-weight: bold; font-family: Arial">Choix du activité</h1>
+
+
+    <div class="row">
+    {% for activite in activites %}
+        <div class="col-md-4 p-2">
+            <a href="{{ path('choice_hotel',{'id-site': idsite,'id-client':idclient, 'id-theme':idtheme, 'id-district': iddistrict, 'id-activity':activite.id}) }}" style="text-decoration: none">
+                <div class="card">
+                    <div class="card-header">
+                        {{ activite.name }}
+                    </div>
+                    <div class="card-body">
+                        <h4>{{ activite.type }}</h4>
+                    </div>
+                    <div class="card-footer">
+                        <strong>{{ activite.prix }} Ar</strong>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% else %}
+        </div>
+    {% endfor %}
+{% endblock %}

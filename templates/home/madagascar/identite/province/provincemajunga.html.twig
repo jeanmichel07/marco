@@ -1,29 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Guide d'information{% endblock %}
+{% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
 
     <div class="container-fluid p-6">
         <div class="container">
-            <h1 style="padding: 20px; font-weight: bold; text-align: center; font-family: 'Arial Black'">
-                IDENTITE DE MADAGASCAR
+            <h1 style="padding-top: 10px; font-weight: bold; text-align: center; font-family: 'Arial Black'">
+                LE PROVINCES DE MAJUNGA
             </h1>
-            <p>Les régions de Majunga:</p>
-            <div class="row" style="padding: 20px">
-                <div class="col-md-6 bg-dark text-white">
-                    <a href="{{ path('app_provincemajungasofia') }}">SOFIA</a>
+
+            <div class="row" style="font-weight: bold; text-align: center;font-size:20px;padding-bottom: 172px">
+                <div class="col-md-3">
+                    <div class="mt-4 p-5 bg-dark rounded">
+                        <a style="text-decoration:none;color: #FFFFFF" href="{{ path('app_provincemajungasofia') }}">SOFIA</a>
+                    </div>
                 </div>
-                <div class="col-md-6 bg-dark text-white">
-                    <a href="{{ path('app_provincemajungaboeny') }}">BOENY</a>
+                <div class="col-md-3">
+                    <div class="mt-4 p-5 bg-dark rounded">
+                        <a style="text-decoration:none;color: #FFFFFF" href="{{ path('app_provincemajungaboeny') }}">BOENY</a>
+                    </div>
                 </div>
-            </div>
-            <div class="row" style="padding: 20px">
-                <div class="col-md-6 bg-dark text-white">
-                    <a href="{{ path('app_provincemajungabetsiboka') }}">BETSIBOKA</a>
+                <div class="col-md-3">
+                    <div class="mt-4 p-5 bg-dark rounded">
+                        <a style="text-decoration:none;color: #FFFFFF" href="{{ path('app_provincemajungabetsiboka') }}">BETSIBOKA</a>
+                    </div>
                 </div>
-                <div class="col-md-6 bg-dark text-white">
-                    <a href="{{ path('app_provincemajungamelaky') }}">MELAKY</a>
+                <div class="col-md-3">
+                    <div class="mt-4 p-5 bg-dark rounded">
+                        <a style="text-decoration:none;color: #FFFFFF" href="{{ path('app_provincemajungamelaky') }}">MELAKY</a>
+                    </div>
                 </div>
             </div>
         </div>

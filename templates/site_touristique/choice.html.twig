@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center; font-weight: bold; font-family: Arial">Choix du site</h1>
+
+
+    <div class="row">
+    {% for site_touristique in site_touristiques %}
+        <div class="col-md-4 p-2">
+            <a href="{{ path('choie_activity',{'id-site': site_touristique.id,'id-client':idclient, 'id-theme':idtheme, 'id-district': iddistrict}) }}" style="text-decoration: none">
+                <div class="card">
+                    <div class="card-header">
+                        {{ site_touristique.name }}
+                    </div>
+                    <div class="card-body">
+                        <h4>{{ site_touristique.type }}</h4>
+                    </div>
+                    <div class="card-footer">
+                        <strong>{{ site_touristique.prix }} Ar</strong>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% else %}
+        </div>
+    {% endfor %}
+{% endblock %}

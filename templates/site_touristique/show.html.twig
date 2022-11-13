@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1>SiteTouristique</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ site_touristique.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ site_touristique.name }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ site_touristique.type }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ site_touristique.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_site_touristique_index') }}">back to list</a>
+
+    <a href="{{ path('app_site_touristique_edit', {'id': site_touristique.id}) }}">edit</a>
+
+    {{ include('site_touristique/_delete_form.html.twig') }}
+{% endblock %}

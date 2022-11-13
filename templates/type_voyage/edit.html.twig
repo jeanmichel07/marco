@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Modification&nbsp;{{ type_voyage.name }}&nbsp;{{ type_voyage.titre }}</h1>
+
+    {{ include('type_voyage/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;" href="{{ path('app_type_voyage_index') }}">Retour</a>
+
+    {{ include('type_voyage/_delete_form.html.twig') }}
+
+{% endblock %}

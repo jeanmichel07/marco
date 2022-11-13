@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1 Style="text-align: center; font-weight: bold; font-family: Arial">THEME VOYAGE</h1>
+
+    <table class="table" style="text-align: center">
+        <thead>
+            <tr class="bg-warning">
+                <th>NOM</th>
+                <th>TITRE</th>
+                <th>CARACTERISTIQUES</th>
+                <th>PRIX</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for theme_voyage in theme_voyages %}
+            <tr>
+
+                <td>{{ theme_voyage.name }}</td>
+                <td>{{ theme_voyage.titre }}</td>
+                <td>{{ theme_voyage.caracteristique }}</td>
+                <td>{{ theme_voyage.prix }}</td>
+                <td>
+                    <a href="{{ path('app_theme_voyage_show', {'id': theme_voyage.id}) }}">Voir</a>
+                    <a href="{{ path('app_theme_voyage_edit', {'id': theme_voyage.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Pas de liste</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if app.user %}
+        {% if app.user.roles[0] == "ROLE_ADMIN" %}
+<div style="text-align: center; padding-bottom: 10px">
+        <a class="btn btn-primary text-white p-1" href="{{ path('app_theme_voyage_new') }}">Ajouter</a>
+</div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

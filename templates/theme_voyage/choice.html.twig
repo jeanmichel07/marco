@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center; font-weight: bold; font-family: Arial">Choix du theme</h1>
+
+
+    <div class="row">
+    {% for theme_voyage in theme_voyages %}
+        <div class="col-md-4 p-2">
+            <a href="{{ path('choice_site',{"id-theme":theme_voyage.id, "id-client":app.request.get('id_client')}) }}" style="text-decoration: none">
+                <div class="card">
+                    <div class="card-header">
+                        {{ theme_voyage.name }}
+                    </div>
+                    <div class="card-body">
+                        <h4>{{ theme_voyage.titre }}</h4>
+                        <p>{{ theme_voyage.caracteristique }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <strong>{{ theme_voyage.prix }} Ar</strong>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% else %}
+        </div>
+    {% endfor %}
+{% endblock %}

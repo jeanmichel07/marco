@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center; font-weight: bold; font-family: Arial">Choix du hotel</h1>
+
+
+    <div class="row">
+    {% for hotel in hotels %}
+        <div class="col-md-4 p-2">
+            <a href="{{ path('create_voyage_resrvation',{'id-site': idsite,'id-client':idclient, 'id-theme':idtheme, 'id-district': iddistrict, 'id-activity':idactivity, 'id-hotel':hotel.id}) }}" style="text-decoration: none">
+                <div class="card">
+                    <div class="card-header">
+                        {{ hotel.name }}
+                    </div>
+                    <div class="card-body">
+                        <h4>{{ hotel.type }}</h4>
+                    </div>
+                    <div class="card-footer">
+                        <strong>{{ hotel.prix }} Ar</strong>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% else %}
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence de voyage{% endblock %}
+
+{% block body %}
+    <h1>LocVoiture index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Capacite</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for loc_voiture in loc_voitures %}
+            <tr>
+                <td>{{ loc_voiture.id }}</td>
+                <td>{{ loc_voiture.type }}</td>
+                <td>{{ loc_voiture.capacite }}</td>
+                <td>{{ loc_voiture.prix }}</td>
+                <td>
+                    <a href="{{ path('app_loc_voiture_show', {'id': loc_voiture.id}) }}">show</a>
+                    <a href="{{ path('app_loc_voiture_edit', {'id': loc_voiture.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if app.user %}
+        {% if app.user.roles[0] == "ROLE_ADMIN" %}
+            <a href="{{ path('app_loc_voiture_new') }}">Create new</a>
+        {% endif %}
+    {% endif %}
+{% endblock %}
