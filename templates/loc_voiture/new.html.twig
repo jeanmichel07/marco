@@ -3,9 +3,10 @@
 {% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>Create new LocVoiture</h1>
+    <h1 style="font-family: Arial; font-weight: bold;text-align: center">Ajouter nouveau Voiture</h1>
 
     {{ include('loc_voiture/_form.html.twig') }}
-
-    <a href="{{ path('app_loc_voiture_index') }}">back to list</a>
+<div style="text-align: center; padding-bottom: 10px">
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;" href="{{ path('app_loc_voiture_index') }}">Retour</a>
+</div>
 {% endblock %}

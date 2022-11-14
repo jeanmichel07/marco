@@ -1,54 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}InfoClient{% endblock %}
+{% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>InfoClient</h1>
+    <h1 style="text-align: center">Info Client</h1>
 
-    <table class="table">
+    <table class="table" style="text-align: center">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th class="bg-warning">N°</th>
                 <td>{{ info_client.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th class="bg-warning">Nom</th>
                 <td>{{ info_client.name }}</td>
             </tr>
             <tr>
-                <th>Prenom</th>
+                <th class="bg-warning">Prénom</th>
                 <td>{{ info_client.prenom }}</td>
             </tr>
             <tr>
-                <th>Adresse</th>
+                <th class="bg-warning">Adresse</th>
                 <td>{{ info_client.adresse }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th class="bg-warning">Email</th>
                 <td>{{ info_client.email }}</td>
             </tr>
             <tr>
-                <th>Phone</th>
+                <th class="bg-warning">Phone</th>
                 <td>{{ info_client.phone }}</td>
             </tr>
             <tr>
-                <th>Genre</th>
-                <td>{{ info_client.genre }}</td>
-            </tr>
-            <tr>
-                <th>CIN</th>
+                <th class="bg-warning">CIN</th>
                 <td>{{ info_client.CIN }}</td>
             </tr>
             <tr>
-                <th>Type</th>
+                <th class="bg-warning">Type</th>
                 <td>{{ info_client.type }}</td>
             </tr>
         </tbody>
     </table>
+<div style="text-align: center; display: flex; padding-bottom: 120px">
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;" href="{{ path('app_info_client_index') }}">Retour</a>&nbsp;
 
-    <a href="{{ path('app_info_client_index') }}">back to list</a>
-
-    <a href="{{ path('app_info_client_edit', {'id': info_client.id}) }}">edit</a>
+    <a class="btn btn-warning text-white p-1 "style="text-decoration: none;" href="{{ path('app_info_client_edit', {'id': info_client.id}) }}">Modifier</a>&nbsp;
 
     {{ include('info_client/_delete_form.html.twig') }}
+</div>
 {% endblock %}

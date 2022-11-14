@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New InfoClient{% endblock %}
+{% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>Create new InfoClient</h1>
+    <h1 style="font-family: Arial; font-weight: bold;text-align: center">Ajouter nouveau Client</h1>
 
     {{ include('info_client/_form.html.twig') }}
-
-    <a href="{{ path('app_info_client_index') }}">back to list</a>
+<div style="text-align: center; padding-bottom: 10px">
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;" href="{{ path('app_info_client_index') }}">Retour</a>
+</div>
 {% endblock %}

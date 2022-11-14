@@ -3,11 +3,11 @@
 {% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>Edit Hotel</h1>
+    <h1>Modification Hotel</h1>
 
     {{ include('hotel/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_hotel_index') }}">back to list</a>
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;padding-bottom: 10px" href="{{ path('app_hotel_index') }}">Retour</a>
 
     {{ include('hotel/_delete_form.html.twig') }}
 {% endblock %}

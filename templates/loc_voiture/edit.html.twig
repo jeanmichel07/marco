@@ -3,11 +3,11 @@
 {% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>Edit LocVoiture</h1>
+    <h1 style="text-align: center">Modification Info Voiture</h1>
 
     {{ include('loc_voiture/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_loc_voiture_index') }}">back to list</a>
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;padding-bottom: 10px" hhref="{{ path('app_loc_voiture_index') }}">Retour</a>
 
     {{ include('loc_voiture/_delete_form.html.twig') }}
 {% endblock %}

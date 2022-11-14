@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Reservation{% endblock %}
+{% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>Create new Reservation</h1>
+    <h1 style="font-family: Arial; font-weight: bold;text-align: center">Ajouter nouveau Reservation</h1>
 
     {{ include('reservation/_form.html.twig') }}
-
-    <a href="{{ path('app_reservation_index') }}">back to list</a>
+    <div style="text-align: center; padding-bottom: 10px">
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;" href="{{ path('app_reservation_index') }}">Retour</a>
+    </div>
 {% endblock %}

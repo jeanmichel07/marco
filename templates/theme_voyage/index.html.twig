@@ -24,8 +24,8 @@
                 <td>{{ theme_voyage.caracteristique }}</td>
                 <td>{{ theme_voyage.prix }}</td>
                 <td>
-                    <a href="{{ path('app_theme_voyage_show', {'id': theme_voyage.id}) }}">Voir</a>
-                    <a href="{{ path('app_theme_voyage_edit', {'id': theme_voyage.id}) }}">Modifier</a>
+                    <a class="btn btn-success text-white p-1" style="text-decoration: none;" href="{{ path('app_theme_voyage_show', {'id': theme_voyage.id}) }}">Voir</a>
+                    <a class="btn btn-warning text-white p-1" style="text-decoration: none;" href="{{ path('app_theme_voyage_edit', {'id': theme_voyage.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}

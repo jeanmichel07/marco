@@ -17,9 +17,7 @@ class InfoClientType extends AbstractType
             ->add('adresse')
             ->add('email')
             ->add('phone')
-            ->add('genre')
             ->add('CIN')
-            ->add('type')
         ;
     }
 

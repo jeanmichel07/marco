@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\TypeVoyage;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,9 +13,15 @@ class TypeVoyageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('titre')
-            ->add('caracteristique')
+            ->add('name',TextType::class,[
+                "label"=> "Nom"
+            ])
+            ->add('titre',TextType::class,[
+                "label"=> "Titre"
+            ])
+            ->add('caracteristique',TextType::class,[
+                "label"=> "Caracteristique"
+            ])
         ;
     }
 

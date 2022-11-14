@@ -3,44 +3,45 @@
 {% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>Hotel</h1>
+    <h1 style="text-align: center">Hotel:&nbsp;{{ hotel.name }}</h1>
 
-    <table class="table">
+    <table class="table" style="text-align: center">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th class="bg-success">N°</th>
                 <td>{{ hotel.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th class="bg-success">Nom</th>
                 <td>{{ hotel.name }}</td>
             </tr>
             <tr>
-                <th>Type</th>
+                <th class="bg-success">Type</th>
                 <td>{{ hotel.type }}</td>
             </tr>
             <tr>
-                <th>Adresse</th>
+                <th class="bg-success">Adresse</th>
                 <td>{{ hotel.adresse }}</td>
             </tr>
             <tr>
-                <th>SupChambre</th>
+                <th class="bg-success">SupChambre</th>
                 <td>{{ hotel.supChambre }}</td>
             </tr>
-            <tr>
-                <th>Caracteristic</th>
+            <tr >
+                <th class="bg-success">Caracteristic</th>
                 <td>{{ hotel.caracteristic }}</td>
             </tr>
             <tr>
-                <th>Prix</th>
+                <th class="bg-success">Prix</th>
                 <td>{{ hotel.prix }}</td>
             </tr>
         </tbody>
     </table>
+<div style="text-align: center; display: flex; padding-bottom: 120px">
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;" href="{{ path('app_hotel_index') }}">Retour</a>&nbsp;
 
-    <a href="{{ path('app_hotel_index') }}">back to list</a>
-
-    <a href="{{ path('app_hotel_edit', {'id': hotel.id}) }}">edit</a>
+    <a class="btn btn-warning text-white p-1 "style="text-decoration: none;" href="{{ path('app_hotel_edit', {'id': hotel.id}) }}">Modifier</a>&nbsp;
 
     {{ include('hotel/_delete_form.html.twig') }}
+</div>
 {% endblock %}

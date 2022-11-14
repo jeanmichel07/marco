@@ -8,7 +8,7 @@
     <table class="table" style="text-align: center">
         <tbody>
             <tr>
-                <th class="bg-success">Id</th>
+                <th class="bg-success">N°</th>
                 <td>{{ type_voyage.id }}</td>
             </tr>
             <tr>
@@ -25,7 +25,7 @@
             </tr>
         </tbody>
     </table>
-    <div style="text-align: center; display: flex; padding-bottom: 10px">
+    <div style="text-align: center; display: flex; padding-bottom: 120px">
         <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;" href="{{ path('app_type_voyage_index') }}">Retour</a>&nbsp;
 
         <a class="btn btn-warning text-white p-1 "style="text-decoration: none;" href="{{ path('app_type_voyage_edit', {'id': type_voyage.id}) }}">Modifier</a>&nbsp;

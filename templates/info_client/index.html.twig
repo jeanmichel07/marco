@@ -1,49 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}InfoClient index{% endblock %}
+{% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>InfoClient index</h1>
+    <h1 style="text-align: center; font-weight: bold; font-family: Arial">Info Client</h1>
 
-    <table class="table">
+    <table class="table" style="text-align: center">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Prenom</th>
-                <th>Adresse</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Genre</th>
+            <tr class="bg-warning">
+                <th>NOM</th>
+                <th>PRENOM</th>
+                <th>ADRESSE</th>
+                <th>EAMIL</th>
+                <th>PHONE</th>
                 <th>CIN</th>
-                <th>Type</th>
-                <th>actions</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
         {% for info_client in info_clients %}
             <tr>
-                <td>{{ info_client.id }}</td>
                 <td>{{ info_client.name }}</td>
                 <td>{{ info_client.prenom }}</td>
                 <td>{{ info_client.adresse }}</td>
                 <td>{{ info_client.email }}</td>
                 <td>{{ info_client.phone }}</td>
-                <td>{{ info_client.genre }}</td>
                 <td>{{ info_client.CIN }}</td>
-                <td>{{ info_client.type }}</td>
                 <td>
-                    <a href="{{ path('app_info_client_show', {'id': info_client.id}) }}">show</a>
-                    <a href="{{ path('app_info_client_edit', {'id': info_client.id}) }}">edit</a>
+                    <a class="btn btn-success text-white p-1" style="text-decoration: none;" href="{{ path('app_info_client_show', {'id': info_client.id}) }}">Voir</a>
+                    <a class="btn btn-warning text-white p-1" style="text-decoration: none;" href="{{ path('app_info_client_edit', {'id': info_client.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Pas de liste</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+    {% if app.user %}
+        {% if app.user.roles[0] == "ROLE_ADMIN" %}
+            <div style="text-align: center; padding-bottom: 10px">
+                <a class="btn btn-primary text-white p-1"
+                   style="text-decoration: none;" href="{{ path('app_info_client_new') }}">Ajouter</a>
+            </div>
 
-    <a href="{{ path('app_info_client_new') }}">Create new</a>
+        {% endif %}
+    {% endif %}
 {% endblock %}

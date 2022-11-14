@@ -1,34 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reservation{% endblock %}
+{% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>Reservation</h1>
+    <h1 style="text-align: center">Reservation</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th class="bg-warning">N°</th>
                 <td>{{ reservation.id }}</td>
             </tr>
             <tr>
-                <th>DateDepart</th>
+                <th class="bg-warning">Date de Depart</th>
                 <td>{{ reservation.dateDepart ? reservation.dateDepart|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>DateRetoure</th>
+                <th class="bg-warning">Date de Retoure</th>
                 <td>{{ reservation.dateRetoure ? reservation.dateRetoure|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>NbrPersonne</th>
+                <th class="bg-warning">Nombre Personne</th>
                 <td>{{ reservation.nbrPersonne }}</td>
             </tr>
         </tbody>
     </table>
+<div style="text-align: center; display: flex; padding-bottom: 120px">
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;" href="{{ path('app_reservation_index') }}">Retour</a>&nbsp;
 
-    <a href="{{ path('app_reservation_index') }}">back to list</a>
-
-    <a href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">edit</a>
+    <a class="btn btn-warning text-white p-1 "style="text-decoration: none;" href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">Modifier</a>&nbsp;
 
     {{ include('reservation/_delete_form.html.twig') }}
+</div>
 {% endblock %}

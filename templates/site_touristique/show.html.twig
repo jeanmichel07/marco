@@ -3,32 +3,33 @@
 {% block title %}Agence de voyage{% endblock %}
 
 {% block body %}
-    <h1>SiteTouristique</h1>
+    <h1 style="text-align: center">Site Touristique:&nbsp;{{ site_touristique.name }}</h1>
 
-    <table class="table">
+    <table class="table" style="text-align: center">
         <tbody>
-            <tr>
-                <th>Id</th>
+            <tr class="bg-success">
+                <th class="bg-success">N°</th>
                 <td>{{ site_touristique.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th class="bg-success">NOM</th>
                 <td>{{ site_touristique.name }}</td>
             </tr>
             <tr>
-                <th>Type</th>
+                <th class="bg-success">Type</th>
                 <td>{{ site_touristique.type }}</td>
             </tr>
             <tr>
-                <th>Prix</th>
+                <th class="bg-success">Prix</th>
                 <td>{{ site_touristique.prix }}</td>
             </tr>
         </tbody>
     </table>
+<div style="text-align: center; display: flex; padding-bottom: 120px">
+    <a class="btn btn-secondary text-white p-1 "style="text-decoration: none;" href="{{ path('app_site_touristique_index') }}">Retour</a>&nbsp;
 
-    <a href="{{ path('app_site_touristique_index') }}">back to list</a>
-
-    <a href="{{ path('app_site_touristique_edit', {'id': site_touristique.id}) }}">edit</a>
+    <a class="btn btn-warning text-white p-1 "style="text-decoration: none;" href="{{ path('app_site_touristique_edit', {'id': site_touristique.id}) }}">Modifier</a>&nbsp;
 
     {{ include('site_touristique/_delete_form.html.twig') }}
+</div>
 {% endblock %}
